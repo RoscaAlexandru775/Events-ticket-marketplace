@@ -1,0 +1,364 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Doctors Appointment",
+      "day": "May 5th at 2:30pm",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Meeting at School",
+      "day": "May 6th at 1:30pm",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "text": "Food Shopping",
+      "day": "May 7th at 12:30pm",
+      "reminder": true
+    }
+  ],
+  "event": [
+    {
+      "Denumire": "concert",
+      "ZiDesfasurare": "12 mai",
+      "LocatieEventId": 1,
+      "Pret": 12,
+      "NumarBilete": 123,
+      "Categorie": "muzica",
+      "OrganizatorId": 1,
+      "id": 3
+    },
+    {
+      "Denumire": "stand-up",
+      "ZiDesfasurare": "15 mai",
+      "LocatieEventId": 2,
+      "Pret": 13,
+      "NumarBilete": 34,
+      "Categorie": "comedie",
+      "OrganizatorId": 2,
+      "id": 4
+    },
+    {
+      "Denumire": "dfg",
+      "ZiDesfasurare": "gf",
+      "LocatieEventId": 1,
+      "Pret": 2,
+      "NumarBilete": 12,
+      "Categorie": "aS",
+      "OrganizatorId": 1,
+      "id": 5
+    },
+    {
+      "Denumire": "ey",
+      "ZiDesfasurare": "r",
+      "LocatieEventId": 2,
+      "Pret": 2,
+      "NumarBilete": 323,
+      "Categorie": "muzica",
+      "OrganizatorId": 23,
+      "id": 6
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "UserName": "john 1",
+      "Nume": "John",
+      "Prenume": "John",
+      "Email": "john@123",
+      "Password": "1234",
+      "Credit": "12",
+      "Rol": "user",
+      "OrganizatorId": 1
+    },
+    {
+      "UserName": "sasa",
+      "Nume": "sa",
+      "Prenume": "asas",
+      "Email": "addas",
+      "Password": "asd",
+      "Credit": 1,
+      "Rol": "sds",
+      "OrganizatorId": 0,
+      "id": 2
+    }
+  ],
+  "Location": [
+    {
+      "id": 1,
+      "city": "Bucuresti",
+      "province": "Bucuresti",
+      "zipcode": "737007",
+      "country": "Romania",
+      "address": "Strada Mihai Bravu nr 10 bloc 10 scara A etaj 3 ap 10 "
+    },
+    {
+      "id": 2,
+      "city": "AS",
+      "province": "as",
+      "zipcode": "as",
+      "country": "as",
+      "address": "AS"
+    }
+  ],
+  "Organizatori": [
+    {
+      "id": 1,
+      "FullName": "SDDSA",
+      "Email": "ALEX@gmail.com",
+      "Mobile": "4324234"
+    },
+    {
+      "FullName": "f",
+      "Email": "dfsf",
+      "Mobile": "sf",
+      "id": 2
+    },
+    {
+      "FullName": "zcc",
+      "Email": "zczc@s",
+      "Mobile": "zc",
+      "id": 3
+    },
+    {
+      "FullName": null,
+      "Email": null,
+      "Mobile": null,
+      "id": 4
+    },
+    {
+      "FullName": null,
+      "Email": null,
+      "Mobile": null,
+      "id": 5
+    },
+    {
+      "FullName": null,
+      "Email": null,
+      "Mobile": null,
+      "id": 6
+    },
+    {
+      "FullName": "sa",
+      "Email": "ad2a@!1",
+      "Mobile": "asd",
+      "id": 7
+    },
+    {
+      "FullName": "dgf",
+      "Email": "dfg@a",
+      "Mobile": "ffg",
+      "id": 8
+    },
+    {
+      "FullName": null,
+      "Email": null,
+      "Mobile": null,
+      "id": 9
+    },
+    {
+      "FullName": "",
+      "Email": "",
+      "Mobile": "",
+      "id": 10
+    }
+  ],
+  "signupUsers": [
+    {
+      "userName": "cc",
+      "prenume": "f",
+      "nume": "sd",
+      "email": "alexandru.rosca@s.unibuc.ro",
+      "password": "f11",
+      "credit": 1,
+      "rol": "admin",
+      "id": 1
+    },
+    {
+      "userName": "cc",
+      "prenume": "cc",
+      "nume": "cc",
+      "email": "alexandru.rosca@s.unibuc.ro",
+      "password": "",
+      "credit": "",
+      "rol": "",
+      "id": 2
+    },
+    {
+      "userName": "cc",
+      "prenume": "cc",
+      "nume": "cc",
+      "email": "alexandru.rosca@s.unibuc.ro",
+      "password": "123",
+      "credit": 1,
+      "rol": "Admin",
+      "id": 3
+    },
+    {
+      "userName": "sas",
+      "prenume": "ass",
+      "nume": "assa",
+      "email": "asa@123",
+      "password": "asas",
+      "credit": 12,
+      "rol": "User",
+      "id": 4
+    },
+    {
+      "userName": "as",
+      "prenume": "asa",
+      "nume": "sa",
+      "email": "saas1@as",
+      "passWord": "as",
+      "credit": 1,
+      "rol": "Admin",
+      "id": 5
+    },
+    {
+      "userName": "as",
+      "firstname": "asas",
+      "lastname": "sas",
+      "email": "a@gmail.com",
+      "password": "",
+      "credit": "0",
+      "rol": "user",
+      "id": 6
+    },
+    {
+      "userName": "as",
+      "firstname": "sa",
+      "lastname": "ass",
+      "email": "2@1",
+      "password": "1",
+      "credit": "0",
+      "rol": "user",
+      "id": 7
+    },
+    {
+      "userName": "as",
+      "firstname": "saa",
+      "lastname": "sas",
+      "email": "asaxzxz@czzc",
+      "password": "sa",
+      "mobile": "as",
+      "credit": "0",
+      "rol": "user",
+      "id": 8
+    }
+  ],
+  "signupAdmin": [
+    {
+      "userName": "cc",
+      "prenume": "f",
+      "nume": "sd",
+      "email": "alexandru.rosca@s.unibuc.ro",
+      "password": "f11",
+      "rol": "admin",
+      "id": 1
+    },
+    {
+      "userName": "as",
+      "firstname": "assa",
+      "lastname": "sa",
+      "email": "asas@a",
+      "password": "as",
+      "mobile": "sas",
+      "rol": "admin",
+      "id": 2
+    },
+    {
+      "userName": "123",
+      "firstname": "123",
+      "lastname": "123",
+      "email": "131@q",
+      "password": "12",
+      "mobile": "123",
+      "rol": "admin",
+      "id": 3
+    }
+  ],
+  "EventModel": [
+    {
+      "id": 6,
+      "Denumire": "fg",
+      "ZiDesfasurare": "sf",
+      "LocatieEventId": 1,
+      "Pret": 1,
+      "NumarBilete": 1,
+      "Categorie": "3",
+      "OrganizatorId": 1
+    },
+    {
+      "id": 3,
+      "Denumire": "alexandru.rosca@s.unibuc.ro",
+      "ZiDesfasurare": "alexandru.rosca@s.unibuc.ro",
+      "LocatieEventId": 1,
+      "Pret": 1,
+      "NumarBilete": 1,
+      "Categorie": "121",
+      "OrganizatorId": 11
+    },
+    {
+      "id": 4,
+      "Denumire": "213",
+      "ZiDesfasurare": "123",
+      "LocatieEventId": 213,
+      "Pret": 1,
+      "NumarBilete": 123,
+      "Categorie": "13",
+      "OrganizatorId": 13
+    }
+  ],
+  "PaymentModel": [
+    {
+      "id": 0,
+      "CreditPay": 0,
+      "FullName": "john",
+      "CardNumber": "1234567891234",
+      "ExpireDate": "10/20",
+      "CVV": 123
+    },
+    {
+      "CreditPay": 12,
+      "FullName": "Alex Rosca",
+      "CardNumber": "12323123",
+      "CVV": "33",
+      "ExpireDate": "ff/ff",
+      "id": 1
+    },
+    {
+      "CreditPay": 546546,
+      "FullName": "54654654",
+      "CardNumber": "564654654654654654645",
+      "CVV": "",
+      "ExpireDate": "ghfg565465",
+      "id": 2
+    },
+    {
+      "CreditPay": "",
+      "FullName": "",
+      "CardNumber": "",
+      "CVV": "",
+      "ExpireDate": "",
+      "id": 3
+    },
+    {
+      "CreditPay": 54654654,
+      "FullName": "54654654",
+      "CardNumber": "wr234",
+      "CVV": "2424",
+      "ExpireDate": "ff/ff",
+      "id": 4
+    },
+    {
+      "CreditPay": 54654654,
+      "FullName": "wer",
+      "CardNumber": "wre",
+      "CVV": "wre",
+      "ExpireDate": "wre",
+      "id": 5
+    }
+  ]
+}

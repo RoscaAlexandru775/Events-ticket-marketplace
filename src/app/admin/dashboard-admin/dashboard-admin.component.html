@@ -1,0 +1,196 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: rgb(237, 243, 246);" class="navbar-brand">Events</h1>
+        <div class="d-flex">
+            <button  type="button" id="add-btn" class="btn btn-success" (click)="clickAddLocation()" data-bs-toggle="modal" data-bs-target="#exampleLocation">Add Location</button>
+            <button  type="button" id="add-btn" class="btn btn-success" (click)="clickAddOrganizer()" data-bs-toggle="modal" data-bs-target="#exampleOrganizer">Add Organizer</button>
+            <button  type="button" id="add-btn" class="btn btn-success" (click)="clickAddEvent()" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Event</button>
+            <button routerLink="/singupAdmin" class="btn btn-success">Add admin</button>
+            <button routerLink="/login" class="btn btn-danger mx-3">Logout</button>
+            
+        </div>
+    </div>
+</nav>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Id-ul eveninimentului</th>
+            <th scope="col">Denumire</th>
+            <th scope="col">ZiDesfasurare</th>
+            <th scope="col">Id-ul locatiei</th>
+            <th scope="col">Pret</th>
+            <th scope="col">Numar de bilete</th>
+            <th scope="col">Categorie</th>
+            <th scope="col">Id-ul organizatorului</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of eventData">
+            <td>{{row.id}}</td>
+            <td>{{row.Denumire}}</td>
+            <td>{{row.ZiDesfasurare}}</td>
+            <td>{{row.LocatieEventId}}</td>
+            <td>{{row.Pret}}</td>
+            <td>{{row.NumarBilete}}</td>
+            <td>{{row.Categorie}}</td>
+            <td>{{row.OrganizatorId}}</td>
+            <td>
+                <button style="color: rgb(248, 248, 248);" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info" (click)="onEdit(row)">Edit</button>
+                <button  (click)="deleteEventDetail(row)" class="btn btn-danger mx-3" >Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Event Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formEvent">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Denumire</label>
+                      <input type="text" formControlName="Denumire" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <span class="text-danger" *ngIf="formEvent.controls['Denumire'].dirty && formEvent.hasError('required','Denumire')">*Denumire is required</span>
+                  </div>  
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Ziua de desfasurare</label>
+                    <input type="text" formControlName="ZiDesfasurare" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <span class="text-danger" *ngIf="formEvent.controls['ZiDesfasurare'].dirty && formEvent.hasError('required','ZiDesfasurare')">*ZiDesfasurare is required</span>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Id-ul locatie</label>
+                    <input type="number" formControlName="LocatieEventId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <span class="text-danger" *ngIf="formEvent.controls['LocatieEventId'].dirty && formEvent.hasError('required','LocatieEventId')">*LocatieEventId is required</span>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Pret bilet</label>
+                    <input type="number" formControlName="Pret" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <span class="text-danger" *ngIf="formEvent.controls['Pret'].dirty && formEvent.hasError('required','Pret')">*Pret is required</span>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Numar de bilete</label>
+                    <input type="number" formControlName="NumarBilete" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <span class="text-danger" *ngIf="formEvent.controls['NumarBilete'].dirty && formEvent.hasError('required','NumarBilete')">*NumarBilete is required</span>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Categorie</label>
+                    <input type="text" formControlName="Categorie" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <span class="text-danger" *ngIf="formEvent.controls['Categorie'].dirty && formEvent.hasError('required','Categorie')">*Categorie is required</span>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Id-ul organizatorului</label>
+                    <input type="number" formControlName="OrganizatorId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <span class="text-danger" *ngIf="formEvent.controls['OrganizatorId'].dirty && formEvent.hasError('required','OrganizatorId')">*OrganizatorId is required</span>
+                  </div>
+                       
+                       
+                  </form>
+                  
+            </div>
+            <div class="modal-footer">
+                <button id="close" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" *ngIf="showAdd" [disabled]="!formEvent.valid" (click)="postEventDetails()" class="btn btn-primary">Add</button>
+                <button type="button" *ngIf="showUpdate" [disabled]="!formEvent.valid" (click)="updateEventDetails()" class="btn btn-primary">Update</button>
+              
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleOrganizer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Organizer Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formOrganizer">                   
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1">Full Name</label>
+                        <input type="text" formControlName="fullname" class="form-control" id="exampleInputEmail1" placeholder="Full Name">
+                        <span class="text-danger" *ngIf="formOrganizer.controls['fullname'].dirty && formOrganizer.hasError('required','fullname')">*Full Name is required</span>
+                        <span></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1">Phone number</label>
+                        <input type="text" formControlName="mobile" class="form-control" id="exampleInputPassword1" placeholder="Phone number">
+                        <span class="text-danger" *ngIf="formOrganizer.controls['mobile'].dirty && formOrganizer.hasError('required','mobile')">*Phone number number is required</span>
+                        <span></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small><br>
+                        <span class="text-danger" *ngIf="formOrganizer.controls['email'].dirty && formOrganizer.hasError('required','email')">*Email address is required</span>
+                        <span class="text-danger" *ngIf="formOrganizer.hasError('email','email')">*Email is Invalid</span>
+                    </div>
+                       
+                </form>
+                  
+            </div>
+            <div class="modal-footer">
+                <button id="close" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" (click)="postOrganizerDetails()" [disabled]="!formOrganizer.valid" class="btn btn-primary"  data-bs-dismiss="modal">Add</button>
+            
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleLocation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Location Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formLocation">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1">City</label>
+                        <input type="text" formControlName="city" class="form-control" id="exampleInputPassword1" placeholder="City">
+                        <span class="text-danger" *ngIf="formLocation.controls['city'].dirty && formLocation.hasError('required','city')">*City is required</span>
+                        <span></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1">Province</label>
+                        <input type="text" formControlName="province" class="form-control" id="exampleInputEmail1" placeholder="Province">
+                        <span class="text-danger" *ngIf="formLocation.controls['province'].dirty && formLocation.hasError('required','province')">*Province is required</span>
+                        <span></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1">Zip code</label>
+                        <input type="text" formControlName="zipcode" class="form-control" id="exampleInputEmail1" placeholder="Zipcode">
+                        <span class="text-danger" *ngIf="formLocation.controls['zipcode'].dirty && formLocation.hasError('required','zipcode')">*Zipcode is required</span>
+                        <span></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1">Address</label>
+                        <input type="text" formControlName="address" class="form-control" id="exampleInputEmail1" placeholder="Address">
+                        <span class="text-danger" *ngIf="formLocation.controls['address'].dirty && formLocation.hasError('required','address')">*Address is required</span>
+                        <span></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1">Country</label>
+                        <input type="text" formControlName="country" class="form-control" id="exampleInputEmail1" placeholder="Country">
+                        <span class="text-danger" *ngIf="formLocation.controls['country'].dirty && formLocation.hasError('required','country')">*Country is required</span>
+                        <span></span>
+                    </div>
+                       
+                </form>
+                  
+            </div>
+            <div class="modal-footer">
+                <button id="close" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" (click)="postLocationDetails()" [disabled]="!formLocation.valid" class="btn btn-primary"  data-bs-dismiss="modal">Add</button>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
