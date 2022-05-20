@@ -1,90 +1,4 @@
 {
-  "tasks": [
-    {
-      "id": 1,
-      "text": "Doctors Appointment",
-      "day": "May 5th at 2:30pm",
-      "reminder": true
-    },
-    {
-      "id": 2,
-      "text": "Meeting at School",
-      "day": "May 6th at 1:30pm",
-      "reminder": true
-    },
-    {
-      "id": 3,
-      "text": "Food Shopping",
-      "day": "May 7th at 12:30pm",
-      "reminder": true
-    }
-  ],
-  "event": [
-    {
-      "Denumire": "concert",
-      "ZiDesfasurare": "12 mai",
-      "LocatieEventId": 1,
-      "Pret": 12,
-      "NumarBilete": 123,
-      "Categorie": "muzica",
-      "OrganizatorId": 1,
-      "id": 3
-    },
-    {
-      "Denumire": "stand-up",
-      "ZiDesfasurare": "15 mai",
-      "LocatieEventId": 2,
-      "Pret": 13,
-      "NumarBilete": 34,
-      "Categorie": "comedie",
-      "OrganizatorId": 2,
-      "id": 4
-    },
-    {
-      "Denumire": "dfg",
-      "ZiDesfasurare": "gf",
-      "LocatieEventId": 1,
-      "Pret": 2,
-      "NumarBilete": 12,
-      "Categorie": "aS",
-      "OrganizatorId": 1,
-      "id": 5
-    },
-    {
-      "Denumire": "ey",
-      "ZiDesfasurare": "r",
-      "LocatieEventId": 2,
-      "Pret": 2,
-      "NumarBilete": 323,
-      "Categorie": "muzica",
-      "OrganizatorId": 23,
-      "id": 6
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "UserName": "john 1",
-      "Nume": "John",
-      "Prenume": "John",
-      "Email": "john@123",
-      "Password": "1234",
-      "Credit": "12",
-      "Rol": "user",
-      "OrganizatorId": 1
-    },
-    {
-      "UserName": "sasa",
-      "Nume": "sa",
-      "Prenume": "asas",
-      "Email": "addas",
-      "Password": "asd",
-      "Credit": 1,
-      "Rol": "sds",
-      "OrganizatorId": 0,
-      "id": 2
-    }
-  ],
   "Location": [
     {
       "id": 1,
@@ -101,6 +15,14 @@
       "zipcode": "as",
       "country": "as",
       "address": "AS"
+    },
+    {
+      "id": 3,
+      "city": "sadas",
+      "province": "asd",
+      "zipcode": "asd",
+      "country": "asd",
+      "address": "asd"
     }
   ],
   "Organizatori": [
@@ -246,37 +168,16 @@
       "credit": "0",
       "rol": "user",
       "id": 8
-    }
-  ],
-  "signupAdmin": [
-    {
-      "userName": "cc",
-      "prenume": "f",
-      "nume": "sd",
-      "email": "alexandru.rosca@s.unibuc.ro",
-      "password": "f11",
-      "rol": "admin",
-      "id": 1
     },
     {
       "userName": "as",
-      "firstname": "assa",
-      "lastname": "sa",
-      "email": "asas@a",
-      "password": "as",
-      "mobile": "sas",
+      "firstname": "asd",
+      "lastname": "asd",
+      "email": "asda@aa",
+      "password": "asds",
+      "mobile": "ad",
       "rol": "admin",
-      "id": 2
-    },
-    {
-      "userName": "123",
-      "firstname": "123",
-      "lastname": "123",
-      "email": "131@q",
-      "password": "12",
-      "mobile": "123",
-      "rol": "admin",
-      "id": 3
+      "id": 9
     }
   ],
   "EventModel": [

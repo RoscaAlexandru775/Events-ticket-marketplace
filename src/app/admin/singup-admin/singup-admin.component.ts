@@ -31,7 +31,7 @@ export class SingupAdminComponent implements OnInit {
   }
 
   signUp(){
-     this.http.post<any>("http://localhost:3000/signupAdmin", this.signUpForm.value)
+     this.http.post<any>("http://localhost:3000/signupUsers", this.signUpForm.value)
      .subscribe(res=>{
        alert("Signup Successfull");
        this.signUpForm.reset();

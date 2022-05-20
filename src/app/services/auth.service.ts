@@ -24,7 +24,7 @@ export class AuthService {
       if(user){
         alert("Login Success!!");
         this.isAuthenticated = true;
-        if(user.rol === "Admin")
+        if(user.rol === "Admin" || user.rol === "admin")
            this.router.navigate(['/dashboard-Admin']);
         else 
            this.router.navigate(['/dashboard-User']);
