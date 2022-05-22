@@ -1,0 +1,15 @@
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\bin\Debug\net5.0\DAW_PROJECT.DAL.deps.json
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\bin\Debug\net5.0\DAW_PROJECT.DAL.runtimeconfig.json
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\bin\Debug\net5.0\DAW_PROJECT.DAL.runtimeconfig.dev.json
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\bin\Debug\net5.0\DAW_PROJECT.DAL.dll
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\bin\Debug\net5.0\ref\DAW_PROJECT.DAL.dll
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\bin\Debug\net5.0\DAW_PROJECT.DAL.pdb
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\obj\Debug\net5.0\DAW_PROJECT.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\obj\Debug\net5.0\DAW_PROJECT.DAL.AssemblyInfoInputs.cache
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\obj\Debug\net5.0\DAW_PROJECT.DAL.AssemblyInfo.cs
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\obj\Debug\net5.0\DAW_PROJECT.DAL.csproj.CoreCompileInputs.cache
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\obj\Debug\net5.0\DAW_PROJECT.DAL.dll
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\obj\Debug\net5.0\ref\DAW_PROJECT.DAL.dll
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\obj\Debug\net5.0\DAW_PROJECT.DAL.pdb
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\obj\Debug\net5.0\DAW_PROJECT.DAL.genruntimeconfig.cache
+C:\Users\alex\source\repos\DAW_PROJECT.DAL\obj\Debug\net5.0\DAW_PROJECT.DAL.csproj.AssemblyReference.cache

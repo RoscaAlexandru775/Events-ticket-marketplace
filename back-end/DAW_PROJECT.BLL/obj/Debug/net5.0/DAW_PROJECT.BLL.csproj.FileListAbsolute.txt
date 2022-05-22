@@ -1,0 +1,15 @@
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\bin\Debug\net5.0\DAW_PROJECT.BLL.deps.json
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\bin\Debug\net5.0\DAW_PROJECT.BLL.dll
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\bin\Debug\net5.0\ref\DAW_PROJECT.BLL.dll
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\bin\Debug\net5.0\DAW_PROJECT.BLL.pdb
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\bin\Debug\net5.0\DAW_PROJECT.DAL.dll
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\bin\Debug\net5.0\DAW_PROJECT.DAL.pdb
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\obj\Debug\net5.0\DAW_PROJECT.BLL.csproj.AssemblyReference.cache
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\obj\Debug\net5.0\DAW_PROJECT.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\obj\Debug\net5.0\DAW_PROJECT.BLL.AssemblyInfoInputs.cache
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\obj\Debug\net5.0\DAW_PROJECT.BLL.AssemblyInfo.cs
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\obj\Debug\net5.0\DAW_PROJECT.BLL.csproj.CoreCompileInputs.cache
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\obj\Debug\net5.0\DAW_PROJECT.BLL.csproj.CopyComplete
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\obj\Debug\net5.0\DAW_PROJECT.BLL.dll
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\obj\Debug\net5.0\ref\DAW_PROJECT.BLL.dll
+C:\Users\alex\source\repos\DAW_PROJECT.BLL\obj\Debug\net5.0\DAW_PROJECT.BLL.pdb
