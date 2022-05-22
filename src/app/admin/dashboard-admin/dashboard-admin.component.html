@@ -18,24 +18,21 @@
             <th scope="col">Id-ul eveninimentului</th>
             <th scope="col">Denumire</th>
             <th scope="col">ZiDesfasurare</th>
-            <th scope="col">Id-ul locatiei</th>
             <th scope="col">Pret</th>
             <th scope="col">Numar de bilete</th>
             <th scope="col">Categorie</th>
-            <th scope="col">Id-ul organizatorului</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let row of eventData">
             <td>{{row.id}}</td>
-            <td>{{row.Denumire}}</td>
-            <td>{{row.ZiDesfasurare}}</td>
-            <td>{{row.LocatieEventId}}</td>
-            <td>{{row.Pret}}</td>
-            <td>{{row.NumarBilete}}</td>
-            <td>{{row.Categorie}}</td>
-            <td>{{row.OrganizatorId}}</td>
+            <td>{{row.denumire}}</td>
+            <td>{{row.ziDesfasurare}}</td>
+            <td>{{row.pret}}</td>
+            <td>{{row.numarBilete}}</td>
+            <td>{{row.categorie}}</td>
+      
             <td>
                 <button style="color: rgb(248, 248, 248);" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info" (click)="onEdit(row)">Edit</button>
                 <button  (click)="deleteEventDetail(row)" class="btn btn-danger mx-3" >Delete</button>
@@ -64,11 +61,6 @@
                     <span class="text-danger" *ngIf="formEvent.controls['ZiDesfasurare'].dirty && formEvent.hasError('required','ZiDesfasurare')">*ZiDesfasurare is required</span>
                   </div>
                   <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Id-ul locatie</label>
-                    <input type="number" formControlName="LocatieEventId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <span class="text-danger" *ngIf="formEvent.controls['LocatieEventId'].dirty && formEvent.hasError('required','LocatieEventId')">*LocatieEventId is required</span>
-                  </div>
-                  <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Pret bilet</label>
                     <input type="number" formControlName="Pret" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     <span class="text-danger" *ngIf="formEvent.controls['Pret'].dirty && formEvent.hasError('required','Pret')">*Pret is required</span>
@@ -95,8 +87,8 @@
             </div>
             <div class="modal-footer">
                 <button id="close" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" *ngIf="showAdd" [disabled]="!formEvent.valid" (click)="postEventDetails()" class="btn btn-primary">Add</button>
-                <button type="button" *ngIf="showUpdate" [disabled]="!formEvent.valid" (click)="updateEventDetails()" class="btn btn-primary">Update</button>
+                <button type="button"  *ngIf="showAdd" [disabled]="!formEvent.valid" (click)="postEventDetails()" class="btn btn-primary" data-bs-dismiss="modal">Add</button>
+                <button type="button" *ngIf="showUpdate" [disabled]="!formEvent.valid" (click)="updateEventDetails()" class="btn btn-primary" data-bs-dismiss="modal">Update</button>
               
             </div>
         </div>
@@ -136,7 +128,7 @@
             </div>
             <div class="modal-footer">
                 <button id="close" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" (click)="postOrganizerDetails()" [disabled]="!formOrganizer.valid" class="btn btn-primary"  data-bs-dismiss="modal">Add</button>
+                <button type="button" (click)="postOrganizerDetails()" [disabled]="!formOrganizer.valid" class="btn btn-primary"  data-bs-dismiss="modal" >Add</button>
             
             </div>
         </div>

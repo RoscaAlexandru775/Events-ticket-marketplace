@@ -1,3 +1,4 @@
+import { getInterpolationArgsLength } from '@angular/compiler/src/render3/view/util';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -14,12 +15,17 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if (this.authService.verifyisAuthenticated()) {
-        return true;
+      if (this.authService.verifyisAuthenticated() ) {
+        
+          if(route.data['role'] === this.authService.getRole())
+            return true;
+              
+        
       }
   
       this.router.navigate(['/login']);
       return false;
   }
+  
   
 }

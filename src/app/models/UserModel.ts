@@ -1,9 +1,10 @@
 export class UserModel{
     Id !: number;
-    FullName!:string;
-    Credit!:number;
     UserName!: string;
-    Password!:string;
+    FirstName!:string;
+    LastName!:string;
+    Email!:string;
     Mobile!: string;
-    UserType!: string
+    Password!:string;
+    Role!: string
 }

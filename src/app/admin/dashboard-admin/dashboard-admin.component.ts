@@ -34,7 +34,6 @@ export class DashboardAdminComponent implements OnInit {
       this.formEvent = this.formBuilder.group({
         Denumire: ['',Validators.required],
         ZiDesfasurare:  ['',Validators.required],
-        LocatieEventId:  [0,Validators.required],
         Pret:  [ 0,Validators.required],
         NumarBilete:  [ 0,Validators.required],
         Categorie:  ['',Validators.required],
@@ -71,8 +70,8 @@ export class DashboardAdminComponent implements OnInit {
       this.api.postLocation(this.locationObj)
        .subscribe(res => {
          console.log(res);
-         let ref = document.getElementById('close');
-         ref?.click();
+        //  let ref = document.getElementById('close');
+        //  ref?.click();
          alert("location added successfully");
        });
        
@@ -88,8 +87,8 @@ export class DashboardAdminComponent implements OnInit {
       this.api.postOrganizer(this.organizerObj)
        .subscribe(res => {
          console.log(res);
-         let ref = document.getElementById('close');
-         ref?.click();
+        //  let ref = document.getElementById('close');
+        //  ref?.click();
          alert("organizer added successfully");
        });
        
@@ -105,7 +104,6 @@ export class DashboardAdminComponent implements OnInit {
     postEventDetails() {
        this.eventObj.Denumire = this.formEvent.value.Denumire;
        this.eventObj.ZiDesfasurare = this.formEvent.value.ZiDesfasurare;
-       this.eventObj.LocatieEventId = this.formEvent.value.LocatieEventId;
        this.eventObj.Pret = this.formEvent.value.Pret;
        this.eventObj.NumarBilete = this.formEvent.value.NumarBilete;
        this.eventObj.Categorie = this.formEvent.value.Categorie;
@@ -113,44 +111,41 @@ export class DashboardAdminComponent implements OnInit {
        this.api.postEvents(this.eventObj)
         .subscribe(res => {
           console.log(res);
-          let ref = document.getElementById('close');
-          ref?.click();
+          // let ref = document.getElementById('close');
+          // ref?.click();
           this.getAllEvents();
           alert("events added successfully");
         })
+
     }
     getAllEvents() {
-      this.api.getEvents().subscribe(res=>{this.eventData = res;})
+      this.api.getEvents().subscribe(res=>{
+        this.eventData = res;
+      });
+      
     }
-    getEventDetails() {
-      this.api.getEvents()
-      .subscribe(res=>{
-        this.eventData = res.eventDetails;
-        
-      })
-    }
+   
 
     updateEventDetails(){
       this.eventObj.Denumire = this.formEvent.value.Denumire;
       this.eventObj.ZiDesfasurare = this.formEvent.value.ZiDesfasurare;
-      this.eventObj.LocatieEventId = this.formEvent.value.LocatieEventId;
       this.eventObj.Pret = this.formEvent.value.Pret;
       this.eventObj.NumarBilete = this.formEvent.value.NumarBilete;
       this.eventObj.Categorie = this.formEvent.value.Categorie;
       this.eventObj.OrganizatorId = this.formEvent.value.OrganizatorId;
       this.api.updateEvents(this.eventObj,this.eventObj.id).subscribe(res=>{
         alert("update successfully");
-        let ref = document.getElementById('close');
-        ref?.click();
+        // let ref = document.getElementById('close');
+        // ref?.click();
         this.getAllEvents();
       })
+
     }
    
    onEdit(row : any){
     this.eventObj.id = row.id;
     this.formEvent.controls['Denumire'].setValue(row.Denumire);
     this.formEvent.controls['ZiDesfasurare'].setValue(row.ZiDesfasurare);
-    this.formEvent.controls['LocatieEventId'].setValue(row.LocatieEventId);
     this.formEvent.controls['Pret'].setValue(row.Pret);
     this.formEvent.controls['NumarBilete'].setValue(row.NumarBilete);
     this.formEvent.controls['Categorie'].setValue(row.Categorie);
@@ -165,7 +160,7 @@ export class DashboardAdminComponent implements OnInit {
        alert("Deleted Successfully");
        this.getAllEvents();
      })
-   // }
+
      
    }
 

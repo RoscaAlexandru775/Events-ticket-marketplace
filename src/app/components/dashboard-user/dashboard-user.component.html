@@ -16,24 +16,21 @@
             <th scope="col">Id-ul eveninimentului</th>
             <th scope="col">Denumire</th>
             <th scope="col">ZiDesfasurare</th>
-            <th scope="col">Id-ul locatiei</th>
             <th scope="col">Pret</th>
             <th scope="col">Numar de bilete</th>
             <th scope="col">Categorie</th>
-            <th scope="col">Id-ul organizatorului</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let row of eventData">
             <td>{{row.id}}</td>
-            <td>{{row.Denumire}}</td>
-            <td>{{row.ZiDesfasurare}}</td>
-            <td>{{row.LocatieEventId}}</td>
-            <td>{{row.Pret}}</td>
-            <td>{{row.NumarBilete}}</td>
-            <td>{{row.Categorie}}</td>
-            <td>{{row.OrganizatorId}}</td>
+            <td>{{row.denumire}}</td>
+            <td>{{row.ziDesfasurare}}</td>
+            <td>{{row.pret}}</td>
+            <td>{{row.numarBilete}}</td>
+            <td>{{row.categorie}}</td>
+        
             <td>
                 <button  (click)="addToCart(row)" class="btn btn-success mx-3" >Add to Cart</button>
             </td>
@@ -41,102 +38,3 @@
 
     </tbody>
 </table>
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Event Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form [formGroup]="formValue">
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Denumire</label>
-                      <input type="text" formControlName="Denumire" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <span class="text-danger" *ngIf="formValue.controls['Denumire'].dirty && formValue.hasError('required','Denumire')">*Denumire is required</span>
-                  </div>  
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Ziua de desfasurare</label>
-                    <input type="text" formControlName="ZiDesfasurare" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <span class="text-danger" *ngIf="formValue.controls['ZiDesfasurare'].dirty && formValue.hasError('required','ZiDesfasurare')">*ZiDesfasurare is required</span>
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Id-ul locatie</label>
-                    <input type="number" formControlName="LocatieEventId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <span class="text-danger" *ngIf="formValue.controls['LocatieEventId'].dirty && formValue.hasError('required','LocatieEventId')">*LocatieEventId is required</span>
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Pret bilet</label>
-                    <input type="number" formControlName="Pret" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <span class="text-danger" *ngIf="formValue.controls['Pret'].dirty && formValue.hasError('required','Pret')">*Pret is required</span>
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Numar de bilete</label>
-                    <input type="number" formControlName="NumarBilete" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <span class="text-danger" *ngIf="formValue.controls['NumarBilete'].dirty && formValue.hasError('required','NumarBilete')">*NumarBilete is required</span>
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Categorie</label>
-                    <input type="text" formControlName="Categorie" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <span class="text-danger" *ngIf="formValue.controls['Categorie'].dirty && formValue.hasError('required','Categorie')">*Categorie is required</span>
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Id-ul organizatorului</label>
-                    <input type="number" formControlName="OrganizatorId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <span class="text-danger" *ngIf="formValue.controls['OrganizatorId'].dirty && formValue.hasError('required','OrganizatorId')">*OrganizatorId is required</span>
-                  </div>
-                       
-                       
-                  </form>
-                  
-            </div>
-            <div class="modal-footer">
-                <button id="close" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" *ngIf="showAdd" (click)="postEventDetails()" class="btn btn-primary">Add</button>
-                <button type="button" *ngIf="showUpdate" (click)="updateEventDetails()" class="btn btn-primary">Update</button>
-              
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="exampleOrganizer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Organizer Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form [formGroup]="formOrganizer">
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1">Full Name</label>
-                        <input type="text" formControlName="fullname" class="form-control" id="exampleInputPassword1" placeholder="Full Name">
-                        <span class="text-danger" *ngIf="formOrganizer.controls['fullname'].dirty && formOrganizer.hasError('required','fullname')">*Full Name is required</span>
-                        <span></span>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1">Phone number</label>
-                        <input type="text" formControlName="mobile" class="form-control" id="exampleInputPassword1" placeholder="Phone number">
-                        <span class="text-danger" *ngIf="formOrganizer.controls['mobile'].dirty && formOrganizer.hasError('required','mobile')">*Phone number number is required</span>
-                        <span></span>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small><br>
-                        <span class="text-danger" *ngIf="formOrganizer.controls['email'].dirty && formOrganizer.hasError('required','email')">*Email address is required</span>
-                        <span class="text-danger" *ngIf="formOrganizer.hasError('email','email')">*Email is Invalid</span>
-                    </div>
-                       
-                </form>
-                  
-            </div>
-            <div class="modal-footer">
-                <button id="close" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" (click)="postOrganizerDetails()" class="btn btn-primary"  data-bs-dismiss="modal">Add</button>
-            
-            </div>
-        </div>
-    </div>
-</div>
- -->

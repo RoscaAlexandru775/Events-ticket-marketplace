@@ -18,8 +18,6 @@ export class CartComponent implements OnInit {
   constructor(private cart: CartService, private http:HttpClient) { }
   
 
-  private organizerUrl = 'http://localhost:3000/Organizatori/2';
-
   ngOnInit(): void {
     this.cart.getProducts()
     .subscribe(res=>{
@@ -27,7 +25,7 @@ export class CartComponent implements OnInit {
       this.products = res;
       this.grandTotal = this.cart.getTotalPrice();
     })
-    console.log(this.getOrganizer(1));
+    
   }
   removeItem(item: any){
      this.cart.removeCartItem(item);
@@ -35,8 +33,5 @@ export class CartComponent implements OnInit {
   emptycart(){
      this.cart.removeAllCart();
   }
-  getOrganizer(id : number){
-    return this.http.get<any>(this.organizerUrl).pipe(map((res:any)=>{ return res;}))
-  }
-
+ 
 }

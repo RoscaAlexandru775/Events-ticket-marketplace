@@ -8,44 +8,55 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private loginUrl : string = "http://localhost:3000/signupUsers";
+  public loginAPIUrl : string = "http://localhost:38967/api/Auth/Login";
+  
   public loginForm !: FormGroup;
-  public isAuthenticated : boolean = false;
+  
   constructor(private router: Router,private http:HttpClient) { }
   
-  
-   
-  login(email :any, password : any){
-    this.http.get<any>(this.loginUrl)
-    .subscribe(res=>{
-      const user = res.find((a:any)=>{
-        return a.email === email && a.password === password
-      });
-      if(user){
-        alert("Login Success!!");
-        this.isAuthenticated = true;
-        if(user.rol === "Admin" || user.rol === "admin")
-           this.router.navigate(['/dashboard-Admin']);
-        else 
-           this.router.navigate(['/dashboard-User']);
-        
-      }
-      else {
-        alert("user not found");
-       
-      }
-    },err=>{
-      alert("Something went wrong!!")
-    })
+  register(userObj:any){
+    
+    return this.http.post<any>("http://localhost:38967/api/Auth/Register",userObj);
   }
+  login(userObj:any){
+   
+    return this.http.post<any>("http://localhost:38967/api/Auth/Login",userObj);
+  }
+ 
 
   logout() {
-    this.isAuthenticated = false;
     localStorage.clear();
     this.router.navigate(['/login']);
   }
 
   verifyisAuthenticated(): boolean {
-    return this.isAuthenticated;
+    if(localStorage.getItem('token'))
+      return true;
+    
+    return false;
+  }
+  getRole()
+  {
+    let jwt = localStorage.getItem('token');
+        
+        if(jwt != null){
+          let jwtData = jwt.split('.')[1];
+          let decodedJwtJsonData = window.atob(jwtData)
+          let decodedJwtData = JSON.parse(decodedJwtJsonData)
+          return decodedJwtData.role;
+        }
+  }
+  getUserId()
+  {
+    let jwt = localStorage.getItem('token');
+        
+        if(jwt != null){
+          let jwtData = jwt.split('.')[1];
+          let decodedJwtJsonData = window.atob(jwtData)
+          let decodedJwtData = JSON.parse(decodedJwtJsonData)
+          console.log(decodedJwtData)
+          console.log(decodedJwtData.nameid)
+          return decodedJwtData.nameid;
+        }
   }
 }

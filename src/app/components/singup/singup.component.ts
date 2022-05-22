@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder, Validators} from '@angular/forms'
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { UserModel } from '../../models/UserModel';
 
 
@@ -14,9 +15,9 @@ import { UserModel } from '../../models/UserModel';
 export class SignupComponent implements OnInit {
 
   public signUpForm !: FormGroup;
-  //public signupObj = new UserModel();
+  public signupObj = new UserModel();
  
-  constructor(private fb :FormBuilder, private http : HttpClient,private router : Router,private api:ApiService) { }
+  constructor(private fb :FormBuilder, private http : HttpClient,private router : Router,private auth:AuthService) { }
 
   ngOnInit(): void {
     this.signUpForm = this.fb.group({
@@ -26,30 +27,23 @@ export class SignupComponent implements OnInit {
       email:["",Validators.compose([Validators.required,Validators.email])],
       password:["",Validators.required],
       mobile:["",Validators.required],
-      rol:["user",Validators.required]
+      rol:["User",Validators.required]
     })
   }
 
   signUp(){
-     this.http.post<any>("http://localhost:3000/signupUsers", this.signUpForm.value)
-     .subscribe(res=>{
-       alert("Signup Successfull");
-       this.signUpForm.reset();
-       this.router.navigate(['login'])
-     },err=>{
-       alert("Something went wrong");
-     })
-   }
-  //this.signupObj.FullName = this.signUpForm.value.fullname;
-  //this.signupObj.UserName = this.signUpForm.value.username;
-  //this.signupObj.Password = this.signUpForm.value.password;
-  //this.signupObj.UserType = this.signUpForm.value.usertype;
-  //this.signupObj.Mobile = this.signUpForm.value.mobile
-  // this.api.signUp(this.signUpForm.value)
-  // .subscribe(res=>{
-  //   alert(res.message);
-  //   this.signUpForm.reset();
-  //   this.router.navigate(['login'])
-  // })
-//}
+  this.signupObj.UserName = this.signUpForm.value.userName;
+  this.signupObj.FirstName = this.signUpForm.value.firstname;
+  this.signupObj.LastName = this.signUpForm.value.lastname;
+  this.signupObj.Email = this.signUpForm.value.email;
+  this.signupObj.Mobile = this.signUpForm.value.mobile;
+  this.signupObj.Password = this.signUpForm.value.password;
+  this.signupObj.Role = this.signUpForm.value.rol;
+  this.auth.register(this.signupObj)
+  .subscribe(res=>{
+    alert(res.message);
+    this.signUpForm.reset();
+    this.router.navigate(['/login'])
+  })
+}
 }

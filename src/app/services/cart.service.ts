@@ -7,15 +7,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CartService {
 
-  //private apiUrl = 'http://localhost:3000/EventModel/';
+
 
   public cartItemList : any =[]
   public productList = new BehaviorSubject<any>([]);
   
   constructor(private http:HttpClient) { }
 
-  getProducts(){
-    console.log(this.cartItemList)
+    getProducts(){
     return this.productList.asObservable();
   }
 
@@ -23,25 +22,29 @@ export class CartService {
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
-    console.log(this.cartItemList)
+    
   }
 
   getTotalPrice() : number{
     let grandTotal = 0;
     this.cartItemList.map((a:any)=>{
-      grandTotal += a.Pret;
-      console.log(a);
+      grandTotal += a.pret;
+      
     })
     return grandTotal;
   }
 
   removeCartItem(product: any){
+    var ok=0;
     this.cartItemList.map((a:any, index:any)=>{
-      if(product.id=== a.id){
+      if(product.id=== a.id && ok == 0){
         this.cartItemList.splice(index,1);
+        ok = 1; 
       }
+
     })
     this.productList.next(this.cartItemList);
+    
   }
   removeAllCart(){
     this.cartItemList = []

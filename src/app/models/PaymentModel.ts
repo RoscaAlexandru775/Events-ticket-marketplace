@@ -5,4 +5,5 @@ export class PaymentModel {
     CardNumber: string = '';
     ExpireDate: string = '';
     CVV: number = 0;
+    UserId: number = 0;
   }
